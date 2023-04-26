@@ -1,0 +1,21 @@
+on: push
+name: IM Notification Demo
+jobs:
+  notification:
+    name: IM Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Notify to IM
+      uses: echoings/actions.notify@v0.1.0
+      with:
+        plat_type: 'Lark'
+        notify_title: '前端项目更新了'
+        notify_message: 'https://github.com/Toast-Bread-Department-Studio/WebJs'
+      env:
+        NOTIFY_WEBHOOK: https://open.feishu.cn/open-apis/bot/v2/hook/766292ef-89e6-413a-ab87-a7a48d8d1082
+        NOTIFY_SIGNKEY: zserfvgY123
+        # for Lark use
+        LARK_APP_ID: cli_a377475266b9500e
+        LARK_APP_SECRECT: 0BwOQuTPdP40iV7Z09bjrcAilHm0bDn6

@@ -1,0 +1,103 @@
+.LogoTbd
+{
+    width: 80px;
+    height: 50px;
+
+    position: relative;
+    top: 0px;
+    left: 20px;
+    //transition: opacity 1s ease-in-out;使得object在发生透明度变化时变得平滑
+}
+.BreadCrumb
+{
+    //标志正在使用的功能
+    position: absolute;
+    top: 20px;
+}
+.Tags
+{
+    //标签
+    position: absolute;
+    top: 50px;
+    background:center/cover url('~@/assets/Logo001.png');
+}
+.GoodTags
+{
+    //正面标签
+    width: 500px;
+    background:center/cover url('~@/assets/opacity001.png');
+}
+.BadTags
+{
+    //负面标签
+    width: 500px;
+    background:center/cover url('~@/assets/opacity001.png');
+
+}
+.FunctionMenu
+{
+
+}
+.Sider
+{
+
+}
+.GenerateButton
+{
+    width: 300px;
+    height: 100px;
+    left: 1000px;
+    top: 200px;
+    font-size: 25px;
+}
+.SliderInput01
+{
+    position: absolute;
+    top: 415px;
+    width: 500px;
+}
+.Footer
+{
+    font-size: 10px;
+}
+.ShowOrderList
+{
+    position: absolute;
+    left: 1000px;
+    top: 50px;
+    width: 405px;
+    background-color: white;
+}
+.ShowImageSource
+{
+}
+.StepsTips
+{
+    font-size: 10px;
+}
+.ShowOrderListCard
+{
+    position: absolute;
+    left: 1000px;
+    height: 500px;
+    top: 50px;
+    width: 500px;
+    background-color: white;
+}
+.CheckTheImage
+{
+    font-size: 10px;
+}
+.ReAskButton
+{
+    background-color: aqua;
+    position: absolute;
+    right: 100px;
+    top: 50px;
+}
+.Image
+{
+    position: absolute;
+    right: 900px;
+    top: 50px;
+}

@@ -1,0 +1,14 @@
+//margin 边缘
+body
+{
+    margin: 0;
+}
+#root
+{
+    height: 100%;
+    .App
+    {
+        color: red;
+        //将App中字体颜色设置为红色
+    }
+}
