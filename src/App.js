@@ -1,7 +1,8 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Layout from "@/pages/Layout";
 import Login from "@/pages/Login";
-import Feiju from "./pages/Feiju";
+import Test from "./pages/Test";
+import Regs from "./pages/Regs";
 
 function App() 
 {
@@ -17,7 +18,9 @@ function App()
           </Route>
           <Route path='/Login' element={<Login />}>
           </Route> 
-          {<Route path='/Feiju' element={<Feiju />}>
+          {<Route path='/Test' element={<Test />}>
+          </Route>}
+          {<Route path='/Regs' element={<Regs />}>
           </Route>}
         </Routes>
       </div>

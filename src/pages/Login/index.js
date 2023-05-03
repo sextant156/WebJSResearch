@@ -174,9 +174,11 @@ function Login()
                         </Button>
                     </Link>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" size="large" block onClick={success}>
+                        <Button class = "LoginButton" type="primary" htmlType="submit" size="large" block onClick={success}>
                         登录
                         </Button>
+                        {/* <a href='http://localhost:3000/Layout' className='LoginButton'>登录</a> */}
+
                     </Form.Item>
                 </Form>
             </Card>   

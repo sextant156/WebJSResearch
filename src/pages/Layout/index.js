@@ -22,6 +22,7 @@ import { Form } from 'antd';
 import { Space } from 'antd';//拉开组件间隔
 //import { Radio } from 'antd'
 import {Input} from 'antd';
+import { Header } from 'antd/es/layout/layout';
 // 常用图标
 import { FileOutlined, UserOutlined , DesktopOutlined , TeamOutlined , DropboxOutlined , SearchOutlined , ReloadOutlined } from '@ant-design/icons';
 // 
@@ -40,6 +41,7 @@ import VirtualList from 'rc-virtual-list';
 //scss文件导入 操控页面具体布局
 import './index.scss';
 import Base from 'antd/es/typography/Base';
+import Test from '../Test';
 //
 //--------分割线--------//
 
@@ -77,7 +79,6 @@ const items = [
     getItem('AI音声合成','sub3',null,[
       getItem('VIP 模型训练','3'),
       getItem('声线合成','4')
-    
     ]),
   ]),
   getItem('成为贡献者', '9',<DropboxOutlined />),
@@ -105,10 +106,34 @@ const Laypage = () =>
   };
   const [collapsed, setCollapsed] = useState(false);
   //collapsible可以设定侧栏是否可以折叠
-  async function onFinish(values)
+  const [TestCount,setTestCount] = useState(0);
+  useEffect(() =>{
+    document.title = TestCount;
+  });
+  // 登入账户
+  let Token = cookie.load('Token');
+  // 登入账户
+  useEffect(() =>
   {
-    
-    let dicTemp = 
+    mainStore.getResultList({
+      token : Token,
+    });
+    SetOrderList(mainStore.OrderList);
+    console.log()
+    // // for(let j=0;j < OrderList.length;j++)
+    // // {
+    // //   SetOrderDicList((OrderDicList) => OrderDicList.concat([{title:OrderList[j]},]));
+    // // }
+    SetOrderDicList([{title:1},]);
+    // // appendData();
+    console.log("OrderList",OrderList);
+    // console.log("data",data);
+  },[]);
+  async function OnFinish(values)
+  {
+    // 检查用户提交的数据是否有空值
+    // 若有空值，则使用默认值
+    let DicTemp = 
     {
       negative_prompt:values.negative_prompt,
       prompt:values.prompt,
@@ -143,7 +168,7 @@ const Laypage = () =>
       override_settings_restore_afterwards: true,
       sampler_index:"Euler",
     }
-    let defaultDicTemp = 
+    let DefaultDicTemp = 
     {
       negative_prompt:"1",
       prompt:"1",
@@ -188,35 +213,35 @@ const Laypage = () =>
         }
       }
     }
-    compareDictValues(defaultDicTemp,dicTemp);
-
+    compareDictValues(DefaultDicTemp,DicTemp);
+    // 检查用户提交的数据是否有空值
+    // 若有空值，则使用默认值
+    // 登入账户
     let Token = cookie.load('Token');
+    // 登入账户
+    // 上传Tags
     await mainStore.PushPrompts({
       token : Token,
       task_num : 10,
-      task_detail : dicTemp,
+      task_detail : DicTemp,
     });
+    // 上传Tags
     await mainStore.getResultList({
       token : Token,
     });
-    SetOrderList(mainStore.OrderList);
-    // 提取OrderList，这时是一个简单表，我们需要把它转化为含字典表
-    for(let j=0;j < OrderList.length;j++)
-    {
-      SetOrderDicList((OrderDicList) => OrderDicList.concat([{title:OrderList[j]},]));
-    }
-    appendData();
-    console.log(mainStore.OrderList);
   };
+
+
   const ContainerHeight = 400;
   const [data, setData] = useState([]);
-  
   const appendData = () => 
   {
     setData(OrderDicList);
     // data = [{title:},{title:},{title:},......]
-    // console.log(data);
+    console.log('data',data);
   };
+
+  // 图片展示模块
   // 点击刷新 获取已绘制图片的Base64码 目前而言，一个任务对应多张图片
   const [Base64Code, SetBase64Code] = useState(null)
   async function ReAsk(task_name)
@@ -253,11 +278,13 @@ const Laypage = () =>
       }}
 
     >
+      
       <Sider className='Sider' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <Menu className='FunctionMenu' defaultSelectedKeys={['8']} mode="inline" items={items} theme='dark'>
         </Menu>
       </Sider>
       <Layout className="site-layout">
+        {/* <Header></Header> */}
         <Content
           style=
           {{
@@ -278,7 +305,7 @@ const Laypage = () =>
             </Breadcrumb>
             <br />
             <br />
-            <Form className='Tags' onFinish={onFinish}>
+            <Form className='Tags' onFinish={OnFinish}>
               <Form.Item name="prompt">
                 <TextArea rows={6} placeholder="请输入AI应该采用的绘画元素" className='GoodTags'/>
               </Form.Item>
@@ -363,7 +390,8 @@ const Laypage = () =>
           className='ReAskButton'
           type="primary"
           icon={<ReloadOutlined />}
-          onClick={() => ReAsk('af4f668c-cb1c-11ed-9dac-5f966284fe3b')}
+          // onClick={() => ReAsk('af4f668c-cb1c-11ed-9dac-5f966284fe3b')}
+          onClick={() => setTestCount(TestCount + 1)}
         />
         <img src={Base64Code} alt='img there' className='Image'/>
 

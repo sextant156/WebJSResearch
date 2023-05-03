@@ -20,11 +20,19 @@ class MainStore
     {
       username,
       password
-    })
+    });
     //存入token
     this.token = res.token;
     cookie.remove('Token');
     cookie.save('Token',res.token,{path:'/'});
+  }
+  PushRegsInfo = async({ username , password }) =>
+  {
+    const res = await http.post('https://tritium.work:5000/signup',
+    {
+      username,
+      password
+    });
   }
   PushPrompts = async ({ token , steps , task_num , task_detail }) => 
   {

@@ -53,13 +53,16 @@
 {
   width: 440px;
   height: 600px;
-  position: absolute;
+  position: relative;
   left: 50%;
-  top: 50%;
+  top: 45%;
   transform: translate(-50%, -50%); 
-  box-shadow: 0 0 50px rgb(0 0 0 / 10%);
-  background:center/cover url('~@/assets/opacity001.png');
-  
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  // background:center/cover url('~@/assets/opacity001.png');
+  backdrop-filter: blur(5px);
+  transition: 0.2s;
+  // pointer-events: none;
+  background: transparent;
 }
 .login-checkbox-label 
 {
@@ -75,4 +78,19 @@
   height: 80px;
   display: block;
   margin: 0 auto 20px;
+}
+.LoginButton
+{
+  left: 34px;
+  position: relative;
+  display: inline-block;
+  padding: 12px 144px;
+  margin: 10px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ffc905, #55e7fc);
 }
