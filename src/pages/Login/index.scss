@@ -79,18 +79,28 @@
   display: block;
   margin: 0 auto 20px;
 }
-.LoginButton
+.GotoRegs
 {
-  left: 34px;
+  // left: 34px;
+  // position: relative;
+  // display: inline-block;
+  // padding: 12px 144px;
+  // margin: 10px 0;
+  // color: #fff;
+  // text-decoration: none;
+  // text-transform: uppercase;
+  // font-size: 18px;
+  // letter-spacing: 2px;
+  // border-radius: 10px;
+  // background: linear-gradient(90deg, #ffc905, #55e7fc);
+  // 设置为白色
   position: relative;
-  display: inline-block;
-  padding: 12px 144px;
-  margin: 10px 0;
   color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 18px;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #ffc905, #55e7fc);
+  // 设置为黑体
+  font-weight: bold;
+  // 设置字体大小
+  font-size: 16px;
+  // 设置在容器中居中
+  left: 28%;
+  top: 40%;
 }

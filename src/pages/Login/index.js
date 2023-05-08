@@ -177,7 +177,7 @@ function Login()
                         <Button class = "LoginButton" type="primary" htmlType="submit" size="large" block onClick={success}>
                         登录
                         </Button>
-                        {/* <a href='http://localhost:3000/Layout' className='LoginButton'>登录</a> */}
+                        <a href='http://localhost:3000/Regs' className='GotoRegs'>还没有账号？去注册一个!</a>
 
                     </Form.Item>
                 </Form>

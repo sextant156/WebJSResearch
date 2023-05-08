@@ -66,7 +66,7 @@ function Regs()
     }
     return(
         <div className="Regs">
-            <img src={Wallpaper005}>
+            <img src={Wallpaper005} className="backgroundimg">
             </img>
             {/* <Button className="ResetButton" shape="circle" type="primary" icon={<RedoOutlined />} onClick={changebackground}>
             </Button> */}
