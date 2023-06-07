@@ -8,11 +8,13 @@
     left: 20px;
     //transition: opacity 1s ease-in-out;使得object在发生透明度变化时变得平滑
 }
-.BreadCrumb
+.Introduction
 {
     //标志正在使用的功能
     position: absolute;
-    top: 20px;
+    // 设置字体为楷体
+    font-family: KaiTi;
+    top: 18px;
 }
 .Tags
 {
@@ -24,14 +26,20 @@
 .GoodTags
 {
     //正面标签
-    width: 500px;
-    background:center/cover url('~@/assets/opacity001.png');
+    width: 500px; 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: 0.2s;
+    background: transparent;
 }
 .BadTags
 {
     //负面标签
     width: 500px;
-    background:center/cover url('~@/assets/opacity001.png');
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: 0.2s;
+    background: transparent;
 
 }
 .FunctionMenu
@@ -44,18 +52,27 @@
 }
 .GenerateButton
 {
+    position: absolute;
     width: 300px;
     height: 100px;
     left: 1000px;
-    top: 200px;
+    top: 500px;
     font-size: 25px;
 }
-.SliderInput01
+.Steps
+{
+
+}
+.ParameterCard
 {
     position: absolute;
-    top: 415px;
-    width: 500px;
+    left: 100px;
+    top: 375px;
+    width: 750px;
+    height: 350px;
+    background-color: white;
 }
+
 .Footer
 {
     font-size: 10px;
@@ -66,7 +83,7 @@
     left: 1000px;
     top: 50px;
     width: 405px;
-    background-color: white;
+    background-color: rgb(251, 243, 221);
 }
 .ShowImageSource
 {
@@ -90,14 +107,27 @@
 }
 .ReAskButton
 {
-    background-color: aqua;
+    // 刷新按钮1
+    background-color: black;
     position: absolute;
     right: 100px;
     top: 50px;
+}
+.ReFreshButton
+{
+    // 刷新按钮2
+    background-color: rgb(0, 33, 95);
+    position: absolute;
+    right: 132px;
+    top: 52px;
 }
 .Image
 {
     position: absolute;
     right: 900px;
     top: 50px;
+}
+.ListItem
+{
+    background-color: antiquewhite;
 }

@@ -3,6 +3,7 @@ import Layout from "@/pages/Layout";
 import Login from "@/pages/Login";
 import Test from "./pages/Test";
 import Regs from "./pages/Regs";
+import AIdraw from "./pages/AIdraw";
 
 function App() 
 {
@@ -21,6 +22,8 @@ function App()
           {<Route path='/Test' element={<Test />}>
           </Route>}
           {<Route path='/Regs' element={<Regs />}>
+          </Route>}
+          {<Route path='/AIdraw' element={<AIdraw />}>
           </Route>}
         </Routes>
       </div>
